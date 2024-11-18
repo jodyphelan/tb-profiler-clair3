@@ -18,14 +18,6 @@ class Clair3(VariantCaller):
                 'help': 'Path to Clair3 model',
                 'choices': get_downloaded_models(),
             }
-        },
-        {
-            'args':['--clair3_path'], 
-            'kwargs':{
-                'type': str, 
-                'help': 'Path to Clair3 executable',
-                'default': 'run_clair3.sh'
-            }
         }
     ]
     
