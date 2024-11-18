@@ -45,7 +45,6 @@ class Clair3(VariantCaller):
             else:
                 raise NotImplementedError("%s not implemented for %s platform" % (self.__software__,self.platform))
             
-            print(self.calling_cmd)
             run_cmd(self.calling_cmd)
             shutil.move(f"{tmp_dir}/merge_output.vcf.gz", self.vcf_file)
 
