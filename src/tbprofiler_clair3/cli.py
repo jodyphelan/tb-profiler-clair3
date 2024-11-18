@@ -13,12 +13,14 @@ __clair3_model_path__ = os.path.join(__clair3_base_path__, "models/")
 __clair3_rerio_model_path__ = __clair3_base_path__ + "rerio/clair3_models/"
 
 if not os.path.exists(__clair3_base_path__):
+    original_dir = os.getcwd()
     logging.debug("Creating Clair3 model directory at %s" % __clair3_base_path__)
     os.makedirs(__clair3_base_path__, exist_ok=True)
     os.makedirs(__clair3_model_path__, exist_ok=True)
     os.chdir(__clair3_base_path__)
     # Download the Clair3 models
     sp.run('git clone https://github.com/nanoporetech/rerio.git', shell=True)
+    os.chdir(original_dir)
 
 def get_available_models():
     available_models = [d.replace('_model','') for d in os.listdir(__clair3_rerio_model_path__)]
