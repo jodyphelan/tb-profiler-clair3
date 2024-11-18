@@ -38,10 +38,10 @@ class Clair3(VariantCaller):
             if self.platform=="nanopore":
                 if self.bed_file:
                     self.vcf_file = "%s.vcf.gz" % (self.prefix)
-                    self.calling_cmd = "%(clair3_path)s -b %(bam_file)s -f %(ref_file)s --threads %(threads)s --output %(tmp_dir)s --platform ont --model_path %(clair3_model_path)s --include_all_ctgs --no_phasing_for_fa --haploid_sensitive --sample_name=%(bam_sample_name)s --chunk_size=20000 -t %(threads)s" % vars(self)
+                    self.calling_cmd = "%(clair3_path)s -b %(bam_file)s -f %(ref_file)s --bed_fn=%(bed_file)s --threads %(threads)s --output %(tmp_dir)s --platform ont --model_path %(clair3_model_path)s --include_all_ctgs --no_phasing_for_fa --haploid_sensitive --sample_name=%(bam_sample_name)s --chunk_size=20000 -t %(threads)s" % vars(self)
                 else:
                     self.vcf_file = "%s.short_variants.vcf.gz" % (self.prefix)
-                    self.calling_cmd = "%(clair3_path)s -b %(bam_file)s -f %(ref_file)s --threads %(threads)s --output %(tmp_dir)s --platform ont --model_path %(clair3_model_path)s --include_all_ctgs --no_phasing_for_fa --haploid_sensitive --sample_name=%(bam_sample_name)s --chunk_size=20000 -t %(threads)s --bed_fn=%(bed_file)s" % vars(self)
+                    self.calling_cmd = "%(clair3_path)s -b %(bam_file)s -f %(ref_file)s --threads %(threads)s --output %(tmp_dir)s --platform ont --model_path %(clair3_model_path)s --include_all_ctgs --no_phasing_for_fa --haploid_sensitive --sample_name=%(bam_sample_name)s --chunk_size=20000 -t %(threads)s" % vars(self)
             else:
                 raise NotImplementedError("%s not implemented for %s platform" % (self.__software__,self.platform))
             
