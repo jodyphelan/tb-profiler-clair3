@@ -31,7 +31,7 @@ class Clair3(VariantCaller):
     
     def call_variants(self):
         if self.clair3_model is None:
-            raise ValueError("Please provide a Clair3 model with --clair3_model")
+            raise ValueError("Please provide a Clair3 model with `--clair3_model`")
         with TempFolder() as tmp_dir:
             self.tmp_dir = tmp_dir
             self.clair3_model_path = f'{__clair3_model_path__}/{self.clair3_model}'
