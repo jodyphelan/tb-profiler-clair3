@@ -1,6 +1,6 @@
 # tb-profiler-clair3
 
-This is a tb-profiler plugin that will enable the use of clair3 as a variant caller in tb-profiler. 
+This is a tb-profiler plugin that will enable the use of clair3 as a variant caller in tb-profiler (and more broadly, any tool using (pathogen-profiler)[https://github.com/jodyphelan/pathogen-profiler]). 
 
 > [!WARNING]
 > This is plugin is still in active development
